@@ -2,24 +2,31 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class CheckCollisions : MonoBehaviour
 {
     public int score;
     public TextMeshProUGUI CoinText;
-    private void OnTriggerEnter(Collider other)
+
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    if (gameObject.CompareTag("obstacle"))
+    //    {
+    //        RestartLevel();
+    //    }
+    //}
+
+    private void OnCollisionEnter(Collision collision)
     {
-        if (other.CompareTag("Coin"))
+        if (collision.collider.CompareTag("obstacle"))
         {
-            Debug.Log("Coin Collected");
-            AddCoin();
-            //Destroy(other.gameObject);
-            other.gameObject.SetActive(false);
+            RestartLevel();
         }
     }
-    public void AddCoin()
+    private static void RestartLevel()
     {
-        score++;
-        CoinText.text = "Score: " + score.ToString();
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
+
 }
