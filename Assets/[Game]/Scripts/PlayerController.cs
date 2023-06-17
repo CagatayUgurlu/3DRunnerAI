@@ -7,9 +7,10 @@ public class PlayerController : MonoBehaviour
     public float runningSpeed;
     public float xSpeed;
     public float limitX;
+
     void Start()
     {
-        
+
     }
 
 
