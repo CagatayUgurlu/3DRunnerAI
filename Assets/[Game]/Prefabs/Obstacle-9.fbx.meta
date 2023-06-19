@@ -1,27 +1,9 @@
 fileFormatVersion: 2
-guid: 77397d656c2cba24ea32fc63b63f5a27
+guid: 663171e713740c047b446e03a8593226
 ModelImporter:
   serializedVersion: 21300
-  internalIDToNameTable:
-  - first:
-      74: -1881513580907979650
-    second: FBX_Temp
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Black
-    second: {fileID: -6922793697723135513, guid: b2718a46b76d89b4791770838ec05217, type: 3}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Color-1
-    second: {fileID: -6629797300637803691, guid: b2718a46b76d89b4791770838ec05217, type: 3}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Color-2
-    second: {fileID: -2813467912831258332, guid: b2718a46b76d89b4791770838ec05217, type: 3}
+  internalIDToNameTable: []
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -117,7 +99,7 @@ ModelImporter:
   humanoidOversampling: 1
   avatarSetup: 0
   addHumanoidExtraRootOnlyWhenUsingAvatar: 1
-  remapMaterialsIfMaterialImportModeIsNone: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
   additionalBone: 0
   userData: 
   assetBundleName: 
