@@ -6,8 +6,23 @@ using UnityEngine.SceneManagement;
 
 public class CheckCollisions : MonoBehaviour
 {
+    public int score;
+    public TextMeshProUGUI CoinText;
+    
     public PlayerController playerController;
     public GameObject RestartPanel;
+
+    public PlayerController PlayerController;
+    Vector3 PlayerStartPos;
+    public GameObject speedBoosterIcon;
+
+
+    private void Start()
+    {
+        PlayerStartPos = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+        speedBoosterIcon.SetActive(false);
+    }
+
     //public int score;
     //public TextMeshProUGUI CoinText;
     //private void OnTriggerEnter(Collider other)
@@ -35,12 +50,18 @@ public class CheckCollisions : MonoBehaviour
     {
         if (collision.collider.CompareTag("obstacle"))
         {
-            RestartLevel();
+            //RestartLevel();
+            transform.position = PlayerStartPos;
         }
     }
 
     private static void RestartLevel() 
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    void Playerfinished()
+    {
+        playerController.runningSpeed = 0f;
     }
 }
