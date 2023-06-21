@@ -3,24 +3,29 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
+using Unity.VisualScripting;
 
 public class CheckCollisions : MonoBehaviour
 {
     public int score;
     public TextMeshProUGUI CoinText;
     
-    public PlayerController playerController;
+
     public GameObject RestartPanel;
 
-    public PlayerController PlayerController;
+    public PlayerController playerController;
     Vector3 PlayerStartPos;
     public GameObject speedBoosterIcon;
+    public float speedBoost;
+
+    private InGameRanking inGameRanking;
 
 
     private void Start()
     {
         PlayerStartPos = new Vector3(transform.position.x, transform.position.y, transform.position.z);
         speedBoosterIcon.SetActive(false);
+        inGameRanking = FindObjectOfType<InGameRanking>();
     }
 
     //public int score;
@@ -43,7 +48,26 @@ public class CheckCollisions : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-           
+        
+        if (other.CompareTag("SpeedBoost"))
+        {
+            playerController.runningSpeed = playerController.runningSpeed + speedBoost;
+            speedBoosterIcon.SetActive(true);
+            StartCoroutine(SlowAfterAWhileCoroutine());
+        }
+        else if (other.CompareTag("Finish"))
+        {
+            Playerfinished();
+            if (inGameRanking.namesTxt[6].text == "Player")
+            {
+                Debug.Log("You win!!");
+                //playerController.PlayerAnim.SetBool
+            }
+            else
+            {
+                Debug.Log("You lose!..");
+            }
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -54,6 +78,7 @@ public class CheckCollisions : MonoBehaviour
             transform.position = PlayerStartPos;
         }
     }
+    
 
     private static void RestartLevel() 
     {
@@ -63,5 +88,12 @@ public class CheckCollisions : MonoBehaviour
     void Playerfinished()
     {
         playerController.runningSpeed = 0f;
+    }
+
+    private IEnumerator SlowAfterAWhileCoroutine()
+    {
+        yield return new WaitForSeconds(2.0f);
+        playerController.runningSpeed = playerController.runningSpeed - speedBoost;
+        speedBoosterIcon.SetActive(false);
     }
 }
