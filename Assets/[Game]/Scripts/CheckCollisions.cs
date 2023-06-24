@@ -10,10 +10,15 @@ public class CheckCollisions : MonoBehaviour
 
    // public GameObject RestartPanel;
 
+
+
     public PlayerController playerController;
     Vector3 PlayerStartPos;
     public GameObject speedBoosterIcon;
     private InGameRanking inGameRanking;
+
+    public CameraShake cameraShake;
+    public UIManager uimanager;
 
 
     private void Start()
@@ -71,6 +76,9 @@ public class CheckCollisions : MonoBehaviour
     {
         if (collision.collider.CompareTag("obstacle"))
         {
+            cameraShake.CameraShakesCall();
+            uimanager.StartCoroutine("WhiteEffect");
+            StartCoroutine(WaitAfterDie());
             GameManager.instance.RestartLevel();
             transform.position = PlayerStartPos;
         }
@@ -92,5 +100,9 @@ public class CheckCollisions : MonoBehaviour
         yield return new WaitForSeconds(2.0f);
         playerController.runningSpeed = playerController.runningSpeed - 3f;
         speedBoosterIcon.SetActive(false);
+    }
+    private IEnumerator WaitAfterDie()
+    {
+        yield return new WaitForSeconds(2.0f);
     }
 }
