@@ -10,6 +10,7 @@ public class Opponent : MonoBehaviour
 
     Vector3 OpponentStartPos;
     public GameObject speedBoosterIcon;
+    public GameObject speedBoosterIconReverse;
     public float speedBoost;
     private void Start()
     {
@@ -43,15 +44,28 @@ public class Opponent : MonoBehaviour
         if (other.CompareTag("speedboost"))
         {
             speedBoosterIcon.SetActive(true);
-            OpponentAgent.speed = OpponentAgent.speed + 3f;
+            OpponentAgent.speed += 3f;
             StartCoroutine(SlowAfterAWhileCoroutine());
+        }
+        else if (other.CompareTag("bumper"))
+        {
+            OpponentAgent.speed  -= 3f;
+            speedBoosterIconReverse.SetActive(true);
+            StartCoroutine(RunFasterAfterHitBumper());
         }
     }
 
     private IEnumerator SlowAfterAWhileCoroutine()
     {
         yield return new WaitForSeconds(2.0f);
-        OpponentAgent.speed = OpponentAgent.speed - 3f;
+        OpponentAgent.speed -= 3f;
         speedBoosterIcon.SetActive(false);
+    }
+
+    private IEnumerator RunFasterAfterHitBumper()
+    {
+        yield return new WaitForSeconds(2.0f);
+        OpponentAgent.speed += 3f;
+        speedBoosterIconReverse.SetActive(false);
     }
 }

@@ -49,7 +49,7 @@ GameObject:
   - component: {fileID: 1603690501078063807}
   m_Layer: 0
   m_Name: arm
-  m_TagString: Untagged
+  m_TagString: obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -130,8 +130,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1.3122187, y: 0.99999976, z: 1}
+  m_Center: {x: -0.1561092, y: 0, z: 0.0000004253638}
 --- !u!1 &1603690502210204758
 GameObject:
   m_ObjectHideFlags: 0
@@ -200,7 +200,7 @@ GameObject:
   - component: {fileID: 1603690502371955989}
   m_Layer: 0
   m_Name: ground_connection
-  m_TagString: Untagged
+  m_TagString: obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -381,7 +381,7 @@ GameObject:
   - component: {fileID: 1603690502679189189}
   m_Layer: 0
   m_Name: arm_ground
-  m_TagString: Untagged
+  m_TagString: obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

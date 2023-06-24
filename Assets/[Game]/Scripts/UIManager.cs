@@ -12,7 +12,7 @@ public class UIManager : MonoBehaviour
         whiteEffectImage.gameObject.SetActive(true);
         while (effectControl == 0)
         {
-            yield return new WaitForSeconds(0.001f);
+            yield return new WaitForSeconds(0.01f);
             whiteEffectImage.color += new Color(0, 0, 0, 0.1f);
             if (whiteEffectImage.color == new Color(whiteEffectImage.color.r, whiteEffectImage.color.g, whiteEffectImage.color.b, 1))
             {
@@ -21,11 +21,11 @@ public class UIManager : MonoBehaviour
         }
         while (effectControl == 1)
         {
-            yield return new WaitForSeconds(0.001f);
+            yield return new WaitForSeconds(0.01f);
             whiteEffectImage.color -= new Color(0, 0, 0, 0.1f);
             if (whiteEffectImage.color == new Color(whiteEffectImage.color.r, whiteEffectImage.color.g, whiteEffectImage.color.b, 0))
             {
-                effectControl = 2;
+                effectControl = 0;
             }
         }
         if(effectControl == 2)

@@ -15,6 +15,7 @@ public class CheckCollisions : MonoBehaviour
     public PlayerController playerController;
     Vector3 PlayerStartPos;
     public GameObject speedBoosterIcon;
+    public GameObject speedBoosterIconReverse;
     private InGameRanking inGameRanking;
 
     public CameraShake cameraShake;
@@ -69,6 +70,12 @@ public class CheckCollisions : MonoBehaviour
             speedBoosterIcon.SetActive(true);
             StartCoroutine(SlowAfterAWhileCoroutine());
         }
+        else if (other.CompareTag("bumper"))
+        {
+            playerController.runningSpeed -= 3f;
+            speedBoosterIconReverse.SetActive(true);
+            StartCoroutine(RunFasterAfterHitBumper());
+        }
 
     }
 
@@ -79,7 +86,7 @@ public class CheckCollisions : MonoBehaviour
             cameraShake.CameraShakesCall();
             uimanager.StartCoroutine("WhiteEffect");
             StartCoroutine(WaitAfterDie());
-            GameManager.instance.RestartLevel();
+           // GameManager.instance.RestartLevel();
             transform.position = PlayerStartPos;
         }
     }
@@ -100,6 +107,12 @@ public class CheckCollisions : MonoBehaviour
         yield return new WaitForSeconds(2.0f);
         playerController.runningSpeed = playerController.runningSpeed - 3f;
         speedBoosterIcon.SetActive(false);
+    }
+    private IEnumerator RunFasterAfterHitBumper()
+    {
+        yield return new WaitForSeconds(2.0f);
+        playerController.runningSpeed = playerController.runningSpeed + 3f;
+        speedBoosterIconReverse.SetActive(false);
     }
     private IEnumerator WaitAfterDie()
     {

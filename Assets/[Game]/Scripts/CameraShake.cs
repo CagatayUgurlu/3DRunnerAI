@@ -7,6 +7,7 @@ using UnityEngine;
 public class CameraShake : MonoBehaviour
 {
     private bool shakeControl;
+    private int shakeEffectControl = 0;
     public IEnumerator CameraShakes(float duration, float magnitude)
     {
         
@@ -16,8 +17,8 @@ public class CameraShake : MonoBehaviour
 
         while (elapsed < duration)
         {
-            float x = Random.Range(-1f, 1f) * magnitude;
-            float y = Random.Range(-1f, 1f) * magnitude;
+            float x = Random.Range(-2f, 2f) * magnitude;
+            float y = Random.Range(-2f, 2f) * magnitude;
 
             transform.localPosition = new Vector3(x,y, originalPos.z);
             elapsed += Time.deltaTime;
@@ -30,10 +31,10 @@ public class CameraShake : MonoBehaviour
     }
     public void CameraShakesCall()
     {
-        if(shakeControl == false)
+        //if(shakeControl == false)
         {
-            StartCoroutine(CameraShakes(0.22f, 0.4f));
-            shakeControl = true;
+            StartCoroutine(CameraShakes(0.20f, 0.6f));
+        //    shakeControl = true;
         }
     }
 }
