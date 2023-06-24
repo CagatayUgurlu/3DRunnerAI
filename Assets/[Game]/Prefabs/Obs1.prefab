@@ -16,8 +16,8 @@ GameObject:
   m_Name: Obstacle-1.000
   m_TagString: obstacle
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &3848977035161260639
 Transform:
@@ -114,8 +114,8 @@ GameObject:
   m_Name: Obstacle-1.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &7951695226081590904
 Transform:
@@ -199,8 +199,8 @@ GameObject:
   m_Name: Obstacle-1.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &6586385462791746685
 Transform:
@@ -285,8 +285,8 @@ GameObject:
   m_Name: Capsule
   m_TagString: obstacle
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &8535954651419163074
 Transform:
@@ -436,8 +436,8 @@ GameObject:
   m_Name: Capsule
   m_TagString: obstacle
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &8535954652334510018
 Transform:
@@ -534,8 +534,8 @@ GameObject:
   m_Name: Capsule
   m_TagString: obstacle
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &8535954652395540796
 Transform:
@@ -666,8 +666,8 @@ GameObject:
   m_Name: Obstacle-1.006
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &5866784409944771993
 Transform:
