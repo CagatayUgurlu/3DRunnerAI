@@ -8,7 +8,7 @@ public class InGameRanking : MonoBehaviour
     public Text[] namesTxt;
     public string a, b, c, d, e, f, g;
 
-    private void Update()
+    void Update()
     {
         namesTxt[0].text = a;
         namesTxt[1].text = b;

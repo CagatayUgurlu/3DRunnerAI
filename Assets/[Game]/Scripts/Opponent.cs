@@ -10,6 +10,7 @@ public class Opponent : MonoBehaviour
 
     Vector3 OpponentStartPos;
     public GameObject speedBoosterIcon;
+    public float speedBoost;
     private void Start()
     {
         OpponentAgent = GetComponent<NavMeshAgent>();
@@ -17,9 +18,14 @@ public class Opponent : MonoBehaviour
         speedBoosterIcon.SetActive(false);
     }
 
-    private void Update()
+    [System.Obsolete]
+    void Update()
     {
         OpponentAgent.SetDestination(Target.transform.position);
+       if (GameManager.instance.isGameOver)
+        {
+            OpponentAgent.Stop();
+        }
 
     }
 
@@ -31,12 +37,13 @@ public class Opponent : MonoBehaviour
         }
     }
 
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("speedboost"))
         {
-            ///OpponentAgent.
             speedBoosterIcon.SetActive(true);
+            OpponentAgent.speed = OpponentAgent.speed + 3f;
             StartCoroutine(SlowAfterAWhileCoroutine());
         }
     }

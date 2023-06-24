@@ -7,17 +7,12 @@ using Unity.VisualScripting;
 
 public class CheckCollisions : MonoBehaviour
 {
-    public int score;
-    public TextMeshProUGUI CoinText;
-    
 
-    public GameObject RestartPanel;
+   // public GameObject RestartPanel;
 
     public PlayerController playerController;
     Vector3 PlayerStartPos;
     public GameObject speedBoosterIcon;
-    public float speedBoost;
-
     private InGameRanking inGameRanking;
 
 
@@ -48,14 +43,7 @@ public class CheckCollisions : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        
-        if (other.CompareTag("SpeedBoost"))
-        {
-            playerController.runningSpeed = playerController.runningSpeed + speedBoost;
-            speedBoosterIcon.SetActive(true);
-            StartCoroutine(SlowAfterAWhileCoroutine());
-        }
-        else if (other.CompareTag("Finish"))
+        if (other.CompareTag("Finish"))
         {
             Playerfinished();
             if (inGameRanking.namesTxt[6].text == "Player")
@@ -68,32 +56,41 @@ public class CheckCollisions : MonoBehaviour
                 Debug.Log("You lose!..");
             }
         }
+
+
+        if (other.CompareTag("speedboost"))
+        {
+            playerController.runningSpeed += 3f;
+            speedBoosterIcon.SetActive(true);
+            StartCoroutine(SlowAfterAWhileCoroutine());
+        }
+
     }
 
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.collider.CompareTag("obstacle"))
         {
-            //RestartLevel();
+            GameManager.instance.RestartLevel();
             transform.position = PlayerStartPos;
         }
     }
     
 
-    private static void RestartLevel() 
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-    }
+
 
     void Playerfinished()
     {
         playerController.runningSpeed = 0f;
+        transform.Rotate(transform.rotation.x, 180, transform.rotation.z, Space.Self);
+        GameManager.instance.RestartPanel.SetActive(true);
+        GameManager.instance.isGameOver = true;
     }
 
     private IEnumerator SlowAfterAWhileCoroutine()
     {
         yield return new WaitForSeconds(2.0f);
-        playerController.runningSpeed = playerController.runningSpeed - speedBoost;
+        playerController.runningSpeed = playerController.runningSpeed - 3f;
         speedBoosterIcon.SetActive(false);
     }
 }

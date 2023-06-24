@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 
@@ -9,21 +10,24 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     private InGameRanking inGameRanking;
 
-    private GameObject[] runner;
+    private GameObject[] runners;
     List<RankingSystem> sortArray = new List<RankingSystem>();
+
+    public GameObject RestartPanel;
+    public bool isGameOver = false;
 
 
     private void Awake()
     {
         instance = this;
-        runner = GameObject.FindGameObjectsWithTag("Runner");
+        runners = GameObject.FindGameObjectsWithTag("Runner");
         inGameRanking = FindObjectOfType<InGameRanking>();
     }
     void Start()
     {
-        for (int i = 0; i < runner.Length; i++)
+        for (int i = 0; i < runners.Length; i++)
         {
-            sortArray.Add(runner[i].GetComponent<RankingSystem>());
+            sortArray.Add(runners[i].GetComponent<RankingSystem>());
         }
     }
 
@@ -34,7 +38,7 @@ public class GameManager : MonoBehaviour
 
     void CalculateRanking()
     {
-        sortArray= sortArray.OrderBy(x => x.distance).ToList();
+        sortArray = sortArray.OrderBy(x => x.distance).ToList();
         sortArray[0].rank = 1;
         sortArray[1].rank = 2;
         sortArray[2].rank = 3;
@@ -50,5 +54,10 @@ public class GameManager : MonoBehaviour
         inGameRanking.e = sortArray[2].name;
         inGameRanking.f = sortArray[1].name;
         inGameRanking.g = sortArray[0].name;
+    }
+
+    public void RestartLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
