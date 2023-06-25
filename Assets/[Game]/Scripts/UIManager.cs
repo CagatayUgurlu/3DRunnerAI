@@ -6,6 +6,21 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
+    #region PlayerPrefs
+    public void Start()
+    {
+        if (!PlayerPrefs.HasKey("Sound"))
+        {
+            PlayerPrefs.SetInt("Sound", 1);
+        }
+
+        if(!PlayerPrefs.HasKey("Vibration"))
+        {
+            PlayerPrefs.SetInt("Vibration", 1);
+        }
+    }
+    #endregion
+
 
     #region Buttons & Button Functions
     public Animator layoutAnim;
@@ -29,7 +44,31 @@ public class UIManager : MonoBehaviour
         settings_Open.SetActive(false); 
         settings_Close.SetActive(true);
         layoutAnim.SetTrigger("Slide_In");
-        AudioListener.volume = 0;
+
+        if(PlayerPrefs.GetInt("Sound") == 1)
+        {
+            sound_On.SetActive(true);
+            sound_Off.SetActive(false);
+            AudioListener.volume = 1;
+        }
+        else if (PlayerPrefs.GetInt("Sound") == 2)
+        {
+            sound_On.SetActive(false);
+            sound_Off.SetActive(true);
+            AudioListener.volume = 0;
+        }
+
+
+        if (PlayerPrefs.GetInt("Vibration") == 1)
+        {
+            vibration_On.SetActive(true);
+            vibration_Off.SetActive(false);
+        }
+        else if (PlayerPrefs.GetInt("Vibration") == 2)
+        {
+            vibration_On.SetActive(false);
+            vibration_Off.SetActive(true);
+        }
     }
 
     public void Settings_Close()
@@ -43,27 +82,35 @@ public class UIManager : MonoBehaviour
     {
         sound_On.SetActive(false);
         sound_Off.SetActive(true);
+        AudioListener.volume = 0;
+        PlayerPrefs.SetInt("Sound", 2);
     }
 
     public void Sound_Off()
     {
         sound_On.SetActive(true);
         sound_Off.SetActive(false);
+        AudioListener.volume = 1;
+        PlayerPrefs.SetInt("Sound", 1);
     }
 
     public void Vibration_On()
     {
         vibration_On.SetActive(false);
         vibration_Off.SetActive(true);
+        PlayerPrefs.SetInt("Vibration", 2);
     }
 
     public void Vibration_Off()
     {
         vibration_On.SetActive(true);
         vibration_Off.SetActive(false);
+        PlayerPrefs.SetInt("Vibration", 1);
     }
 
     #endregion
+
+    
 
     #region WhiteEffect
 
