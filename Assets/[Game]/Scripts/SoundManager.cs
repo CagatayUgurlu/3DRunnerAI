@@ -26,7 +26,7 @@ public class SoundManager : MonoBehaviour
     }
     public void slowDownSound()
     {
-        buttonSource.PlayOneShot(slowDownClip);
+        buttonSource.PlayOneShot(slowDownClip,0.3f);
     }
     public void turnBackSound()
     {

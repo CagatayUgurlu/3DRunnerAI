@@ -944,7 +944,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8733445306967208090, guid: de3b6963f61f83d48bf2aefe2ac388aa, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 14
+      value: 130
       objectReference: {fileID: 0}
     - target: {fileID: 8733445306967208090, guid: de3b6963f61f83d48bf2aefe2ac388aa, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1390,6 +1390,7 @@ MonoBehaviour:
   speedBoosterIconReverse: {fileID: 388207349}
   cameraShake: {fileID: 963194230}
   uimanager: {fileID: 1777273081}
+  soundManager: {fileID: 1639978785}
 --- !u!114 &222265284
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1629,7 +1630,31 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 251735004}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1639978785}
+        m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
+        m_MethodName: ButtonSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1639978785}
+        m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
+        m_MethodName: ButtonSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &251735004
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2715,6 +2740,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1639978785}
+        m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
+        m_MethodName: ButtonSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &419011240
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3717,6 +3754,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1639978785}
+        m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
+        m_MethodName: ButtonSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &592219536
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4508,6 +4557,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1639978785}
+        m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
+        m_MethodName: ButtonSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &779825895
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4792,6 +4853,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1639978785}
+        m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
+        m_MethodName: ButtonSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &840936083
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4938,6 +5011,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1777273081}
         m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
         m_MethodName: Sound_Off
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1639978785}
+        m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
+        m_MethodName: ButtonSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7924,6 +8009,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1777273081}
         m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
         m_MethodName: Settings_Close
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1639978785}
+        m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
+        m_MethodName: ButtonSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -13650,6 +13747,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1639978785}
+        m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
+        m_MethodName: ButtonSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1469769946
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14096,7 +14205,31 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1526152697}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1639978785}
+        m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
+        m_MethodName: ButtonSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1639978785}
+        m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
+        m_MethodName: ButtonSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1526152697
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14307,6 +14440,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 1639978785}
+        m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
+        m_MethodName: ButtonSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &1573710562
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14419,6 +14564,7 @@ MonoBehaviour:
   speedBoosterIconReverse: {fileID: 0}
   cameraShake: {fileID: 0}
   uimanager: {fileID: 0}
+  soundManager: {fileID: 0}
 --- !u!54 &1575012971
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -14941,7 +15087,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4025957718612968990, guid: be7b1432d3e5dea4f8a2f5bc00ac5be6, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 43.755722
+      value: 56.69
       objectReference: {fileID: 0}
     - target: {fileID: 4025957718612968990, guid: be7b1432d3e5dea4f8a2f5bc00ac5be6, type: 3}
       propertyPath: m_LocalRotation.w
@@ -15397,7 +15543,7 @@ GameObject:
   - component: {fileID: 1639978783}
   - component: {fileID: 1639978785}
   m_Layer: 0
-  m_Name: Sounds
+  m_Name: SoundsManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15536,11 +15682,11 @@ MonoBehaviour:
   slowDownSource: {fileID: 1084437694}
   turnBackSource: {fileID: 1213986299}
   completedSource: {fileID: 1691321449}
-  buttonClip: {fileID: 0}
-  speedBoostClip: {fileID: 0}
-  slowDownClip: {fileID: 0}
-  turnBackClip: {fileID: 0}
-  completedClip: {fileID: 0}
+  buttonClip: {fileID: 8300000, guid: 2ef9ad3702558764e807577f52eaef4b, type: 3}
+  speedBoostClip: {fileID: 8300000, guid: b02ef077cd8318a4c8ca6ed692a17d8b, type: 3}
+  slowDownClip: {fileID: 8300000, guid: 88fcffafd5d5eae4e9bcf5d99f7c0bdd, type: 3}
+  turnBackClip: {fileID: 8300000, guid: efe53045c698d4d48a488ac95f8c6e40, type: 3}
+  completedClip: {fileID: 8300000, guid: c8622e961eb2ab445bb29365a1ffafe5, type: 3}
 --- !u!1 &1641521629
 GameObject:
   m_ObjectHideFlags: 0
@@ -20374,7 +20520,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4025957718612968990, guid: be7b1432d3e5dea4f8a2f5bc00ac5be6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 4025957718612968990, guid: be7b1432d3e5dea4f8a2f5bc00ac5be6, type: 3}
       propertyPath: m_LocalPosition.y
@@ -20382,7 +20528,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4025957718612968990, guid: be7b1432d3e5dea4f8a2f5bc00ac5be6, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 61.96572
+      value: 130.8
       objectReference: {fileID: 0}
     - target: {fileID: 4025957718612968990, guid: be7b1432d3e5dea4f8a2f5bc00ac5be6, type: 3}
       propertyPath: m_LocalRotation.w

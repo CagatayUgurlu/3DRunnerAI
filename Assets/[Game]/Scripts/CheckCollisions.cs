@@ -21,6 +21,9 @@ public class CheckCollisions : MonoBehaviour
     public CameraShake cameraShake;
     public UIManager uimanager;
 
+    public SoundManager soundManager;
+
+    //private int soundLimitCount;
 
     private void Start()
     {
@@ -55,6 +58,7 @@ public class CheckCollisions : MonoBehaviour
             if (inGameRanking.namesTxt[6].text == "Player")
             {
                 Debug.Log("You win!!");
+                soundManager.completedSound();
                 //playerController.PlayerAnim.SetBool
             }
             else
@@ -68,12 +72,15 @@ public class CheckCollisions : MonoBehaviour
         {
             playerController.runningSpeed += 3f;
             speedBoosterIcon.SetActive(true);
+            //soundLimitCount++;
+            soundManager.speedBoostSound();
             StartCoroutine(SlowAfterAWhileCoroutine());
         }
         else if (other.CompareTag("bumper"))
         {
             playerController.runningSpeed -= 3f;
             speedBoosterIconReverse.SetActive(true);
+            soundManager.slowDownSound();
             StartCoroutine(RunFasterAfterHitBumper());
         }
 
@@ -85,7 +92,9 @@ public class CheckCollisions : MonoBehaviour
         {
             cameraShake.CameraShakesCall();
             uimanager.StartCoroutine("WhiteEffect");
+            soundManager.turnBackSound();
             StartCoroutine(WaitAfterDie());
+            
            // GameManager.instance.RestartLevel();
             transform.position = PlayerStartPos;
         }
