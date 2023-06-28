@@ -27,11 +27,18 @@ public class PlayerController : MonoBehaviour
         float newX = 0;
         float touchXDelta = 0;
 
+        if (Variables.firstTouch == 1)
+        {
+            transform.position += new Vector3(0, 0, transform.position.z + runningSpeed * Time.deltaTime);
+        }
+
         if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Moved)
         {
+            
             //Debug.Log(Input.GetTouch(0).deltaPosition.x / Screen.width);
             touchXDelta = Input.GetTouch(0).deltaPosition.x / Screen.width;
             // Screen width rakamlarýn daha düzgün hale gelmesini saðlar.
+
         }
         else if (Input.GetMouseButton(0)) // Buradaki yazdýðýmýz else if telefonun çalýþmadýðý durumda (unity remote çalýþmadýðý durumda) oyundan elimizle kontrol etmek için.
         {

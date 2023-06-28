@@ -34,6 +34,20 @@ public class UIManager : MonoBehaviour
     public GameObject vibration_Off;
     public GameObject information;
 
+    public GameObject intro_hand;
+    public GameObject tapToMove_Text;
+    public GameObject noAds_Button;
+    public GameObject shop_Button;
+
+
+
+    public void FirstTouchAndDissappearButtons()
+    {
+        intro_hand.SetActive(false);
+        tapToMove_Text.SetActive(false);
+        noAds_Button.SetActive(false);
+        shop_Button.SetActive(false);
+    }
     public void PanteonURL()
     {
         Application.OpenURL("https://www.panteon.games/");
