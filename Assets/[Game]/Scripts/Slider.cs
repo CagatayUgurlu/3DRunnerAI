@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Slider : MonoBehaviour
 {
+    #region Slider
     public Vector3 pos1;
     public Vector3 pos2;
     public float speed;
@@ -13,4 +14,5 @@ public class Slider : MonoBehaviour
     {
         gameObject.GetComponent<Transform>().localPosition = Vector3.Lerp(pos1, pos2, Mathf.PingPong(Time.time * speed, 1.0f));
     }
+    #endregion
 }

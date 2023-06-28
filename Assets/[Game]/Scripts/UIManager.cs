@@ -21,7 +21,6 @@ public class UIManager : MonoBehaviour
     }
     #endregion
 
-
     #region Buttons & Button Functions
     public Animator layoutAnim;
 
@@ -124,8 +123,6 @@ public class UIManager : MonoBehaviour
 
     #endregion
 
-    
-
     #region WhiteEffect
 
     public Image whiteEffectImage;
@@ -159,5 +156,15 @@ public class UIManager : MonoBehaviour
     }
     #endregion
 
+    #region FillRate
 
+    public Image FillRateImage;
+    public GameObject Player;
+    public GameObject FinishLine;
+
+    public void Update()
+    {
+        FillRateImage.fillAmount = (Player.transform.position.z) / (FinishLine.transform.position.z);
+    }
+    #endregion
 }
