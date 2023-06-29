@@ -8,7 +8,7 @@ using Unity.VisualScripting;
 public class CheckCollisions : MonoBehaviour
 {
 
-    // public GameObject RestartPanel;
+    public GameObject RestartPanel;
 
     public int score;
     public TextMeshProUGUI CoinText;
