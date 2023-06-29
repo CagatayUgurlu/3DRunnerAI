@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     public float limitX;
     private Touch touch;
 
+
     public Animator PlayerAnim;
     public GameObject Player;
     void Start()

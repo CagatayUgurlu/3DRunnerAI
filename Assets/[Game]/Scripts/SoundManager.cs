@@ -9,12 +9,16 @@ public class SoundManager : MonoBehaviour
     public AudioSource slowDownSource;
     public AudioSource turnBackSource;
     public AudioSource completedSource;
+    public AudioSource loseSource;
+    public AudioSource collectCoinSource;
 
     public AudioClip buttonClip;
     public AudioClip speedBoostClip;
     public AudioClip slowDownClip;
     public AudioClip turnBackClip;
     public AudioClip completedClip;
+    public AudioClip loseClip;
+    public AudioClip collectCoinClip;
     
     public void ButtonSound()
     {
@@ -30,11 +34,19 @@ public class SoundManager : MonoBehaviour
     }
     public void turnBackSound()
     {
-        buttonSource.PlayOneShot(turnBackClip);
+        buttonSource.PlayOneShot(turnBackClip, 2f);
     }
     public void completedSound()
     {
         buttonSource.PlayOneShot(completedClip);
+    }
+    public void loseSound()
+    {
+        buttonSource.PlayOneShot(loseClip);
+    }
+    public void collectCoinSound()
+    {
+        buttonSource.PlayOneShot(collectCoinClip, 0.2f);
     }
 
 }

@@ -8,8 +8,10 @@ using Unity.VisualScripting;
 public class CheckCollisions : MonoBehaviour
 {
 
-   // public GameObject RestartPanel;
+    // public GameObject RestartPanel;
 
+    public int score;
+    public TextMeshProUGUI CoinText;
 
 
     public PlayerController playerController;
@@ -32,23 +34,8 @@ public class CheckCollisions : MonoBehaviour
         inGameRanking = FindObjectOfType<InGameRanking>();
     }
 
-    //public int score;
-    //public TextMeshProUGUI CoinText;
-    //private void OnTriggerEnter(Collider other)
-    //{
-    //    if (other.CompareTag("Coin"))
-    //    {
-    //        Debug.Log("Coin Collected");
-    //        AddCoin();
-    //        //Destroy(other.gameObject);
-    //        other.gameObject.SetActive(false);
-    //    }
-    //}
-    //public void AddCoin()
-    //{
-    //    score++;
-    //    CoinText.text = "Score: " + score.ToString();
-    //}
+
+
 
     private void OnTriggerEnter(Collider other)
     {
@@ -59,16 +46,27 @@ public class CheckCollisions : MonoBehaviour
             {
                 Debug.Log("You win!!");
                 soundManager.completedSound();
-                //playerController.PlayerAnim.SetBool
+                playerController.PlayerAnim.SetBool("win",true);
             }
             else
             {
                 Debug.Log("You lose!..");
+                soundManager.loseSound();
+                playerController.PlayerAnim.SetBool("lose", true);
             }
         }
 
+        if (other.CompareTag("Coin"))
+        {
+            Debug.Log("Coin Collected");
+            AddCoin();
+            soundManager.collectCoinSound();
+            //Destroy(other.gameObject);
+            other.gameObject.SetActive(false);
+        }
 
-        if (other.CompareTag("speedboost"))
+
+            if (other.CompareTag("speedboost"))
         {
             playerController.runningSpeed += 3f;
             speedBoosterIcon.SetActive(true);
@@ -99,13 +97,19 @@ public class CheckCollisions : MonoBehaviour
             transform.position = PlayerStartPos;
         }
     }
-    
+
+    public void AddCoin()
+    {
+        score++;
+        CoinText.text = "Score: " + score.ToString();
+    }
 
 
 
     void Playerfinished()
     {
         playerController.runningSpeed = 0f;
+        playerController.limitX = 0f;
         transform.Rotate(transform.rotation.x, 180, transform.rotation.z, Space.Self);
         GameManager.instance.RestartPanel.SetActive(true);
         GameManager.instance.isGameOver = true;
